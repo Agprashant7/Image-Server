@@ -24,7 +24,7 @@ router.get('/', function(req, res){
  
 app.use(express.static('public'));
 app.use(cors());
-app.use('/.netlify/functions/server', app);
+app.use('/.netlify/functions/index', app);
 
 
 router.get(
