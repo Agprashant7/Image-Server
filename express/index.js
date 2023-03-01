@@ -7,6 +7,7 @@ var fs=require('fs').promises
 const serverless = require('serverless-http');
 const cors = require("cors");
 
+
 var storage =   multer.diskStorage({  
     destination: function (req, file, callback) {  
       callback(null, './uploadFiles');  
@@ -22,6 +23,7 @@ app.get('/', function(req, res){
  
 app.use(express.static('public'));
 app.use(cors());
+app.use('/.netlify/functions/server', app);
 
 
   app.get(
