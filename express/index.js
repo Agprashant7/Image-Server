@@ -68,9 +68,6 @@ app.post('/upload-single-file', function(req, res){
     //
 });
 });
-// app.listen(3001, () => {
-//     console.log(`app starting at port 3001`);
-//   });
 
   module.exports = app;
 module.exports.handler = serverless(app);
