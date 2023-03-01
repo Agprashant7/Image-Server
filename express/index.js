@@ -7,6 +7,7 @@ var fs=require('fs').promises
 const serverless = require('serverless-http');
 const cors = require("cors");
 
+const router = express.Router();
 
 var storage =   multer.diskStorage({  
     destination: function (req, file, callback) {  
@@ -17,8 +18,8 @@ var storage =   multer.diskStorage({
     }  
   });  
   var upload = multer({ storage : storage}).single('file');  
-app.get('/', function(req, res){
-   res.render('form');
+router.get('/', function(req, res){
+  res.json({ route: req.originalUrl })
 });
  
 app.use(express.static('public'));
@@ -26,7 +27,7 @@ app.use(cors());
 app.use('/.netlify/functions/server', app);
 
 
-  app.get(
+router.get(
     "/fetch-file",
     async (request, response) => {
         var filePath=`${__dirname}\\uploadFiles\\${request.query.filename}`
@@ -45,7 +46,7 @@ app.use('/.netlify/functions/server', app);
 
     
   );
-app.post('/upload-single-file', function(req, res){
+  router.post('/upload-single-file', function(req, res){
    upload(req,res,function(err) {  
     
     if(err) {  
@@ -71,5 +72,5 @@ app.post('/upload-single-file', function(req, res){
 });
 });
 
-  module.exports = app;
+module.exports = app;
 module.exports.handler = serverless(app);
