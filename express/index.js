@@ -19,7 +19,7 @@ var storage =   multer.diskStorage({
   });  
   var upload = multer({ storage : storage}).single('file');  
 router.get('/', function(req, res){
-  res.json({ route: req.originalUrl })
+  res.write('<h1>Hello from Express.js!</h1>');
 });
  
 app.use(express.static('public'));
