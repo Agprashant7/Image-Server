@@ -11,13 +11,17 @@ var f=fs.promises
 
 const router = express.Router();
  
-
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
 router.get('/', function(req, res){
   res.write('<h1>Hello from Express.js!</h1>');
 });
  
 app.use(express.static('public'));
-app.use(cors());
+app.use(cors(app.use(cors(corsOptions));));
 app.use('/.netlify/functions/index', router);
 
   router.post('/upload-single-file', function(req, res){
