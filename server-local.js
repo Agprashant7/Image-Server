@@ -8,12 +8,18 @@ import { cloudinary } from './utils/cloudinary.js';
 var app = express();
 var f=fs.promises
 
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+
 app.get('/', function(req, res){
    res.render('form');
 });
  
 app.use(express.static('public'));
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.post('/upload-single-file',  function(req, res){
    upload(req,res,async function(err) {  
