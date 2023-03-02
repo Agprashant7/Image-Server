@@ -54,5 +54,4 @@ app.use('/.netlify/functions/index', router);
   });
 });
 
-module.exports = app;
 module.exports.handler = serverless(app);
