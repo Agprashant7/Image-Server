@@ -6,6 +6,6 @@
   [headers.values]
     Access-Control-Allow-Origin = "*"
 [[redirects]]
-  from = "/https://image-server.netlify.app/.netlify/functions/index/upload-single-file"
+  from = "https://image-server.netlify.app/.netlify/functions/index/upload-single-file"
   to = "https://image-server.netlify.app/.netlify/functions/index/upload-single-file"
   status = 200
