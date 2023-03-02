@@ -2,10 +2,10 @@
   command = "npm install && npm run build"
   functions =  "functions"
 [[headers]]
-  for = "/home"
+  for = "https://image-server.netlify.app/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
 [[redirects]]
-  from = "/home"
+  from = "/https://image-server.netlify.app/.netlify/functions/index/upload-single-file"
   to = "https://image-server.netlify.app/.netlify/functions/index/upload-single-file"
   status = 200
