@@ -1,6 +1,5 @@
 import express from 'express'
 import fs from 'fs';
-import cors from 'cors';
 import serverless from 'serverless-http';
 import {upload} from '../utils/multer'
 import { cloudinary } from '../utils/cloudinary.js';
@@ -27,7 +26,7 @@ router.get('/test', function(req, res){
   res.end();
 });
  
-app.use('/.netlify/functions/index', router);
+app.use('/.netlify/functions/index', app);
 
   router.post('/upload-single-file', function(req, res){
     upload(req,res,async function(err) {  
