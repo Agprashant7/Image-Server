@@ -21,7 +21,7 @@ router.get('/', function(req, res){
 });
  
 app.use(express.static('public'));
-app.use(cors(app.use(cors(corsOptions));));
+app.use(cors(corsOptions));
 app.use('/.netlify/functions/index', router);
 
   router.post('/upload-single-file', function(req, res){
