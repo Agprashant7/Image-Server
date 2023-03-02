@@ -1,12 +1,11 @@
 import express from 'express'
-import fs from 'fs';
 import serverless from 'serverless-http';
 import {upload} from '../utils/multer'
 import { cloudinary } from '../utils/cloudinary.js';
-
+import bodyParser from 'body-parser';
 
 var app = express();
-var f=fs.promises
+
 
 const router = express.Router();
  
@@ -15,6 +14,7 @@ const corsOptions ={
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200,
 }
+app.use(bodyParser.json());
 router.get('/', function(req, res){
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
