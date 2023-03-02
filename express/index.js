@@ -26,7 +26,7 @@ router.get('/test', function(req, res){
   res.end();
 });
  
-app.use('/.netlify/functions/index', app);
+app.use('/.netlify/functions/index', router);
 
   router.post('/upload-single-file', function(req, res){
     upload(req,res,async function(err) {  
@@ -52,5 +52,5 @@ app.use('/.netlify/functions/index', app);
       }
   });
 });
-
+module.exports = app;
 module.exports.handler = serverless(app);
