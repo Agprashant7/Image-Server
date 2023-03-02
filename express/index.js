@@ -11,7 +11,7 @@ var f=fs.promises
 
 const router = express.Router();
  
-  var upload = multer({ storage : storage}).single('file');  
+
 router.get('/', function(req, res){
   res.write('<h1>Hello from Express.js!</h1>');
 });
