@@ -54,5 +54,5 @@ router.get('/test', function(req, res){
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use('/.netlify/functions/index', router);
-module.exports = app;
+export default app
 module.exports.handler = serverless(app);
