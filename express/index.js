@@ -3,12 +3,16 @@ import serverless from 'serverless-http';
 import {upload} from '../utils/multer'
 import { cloudinary } from '../utils/cloudinary.js';
 import bodyParser from 'body-parser';
-
+import cors from 'cors';
 var app = express();
 
 
 const router = express.Router();
- 
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
 
 router.get('/', function(req, res){
   res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -48,6 +52,7 @@ router.get('/test', function(req, res){
   
 });
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 app.use('/.netlify/functions/index', router);
 module.exports = app;
 module.exports.handler = serverless(app);
