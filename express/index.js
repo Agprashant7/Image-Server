@@ -6,6 +6,7 @@ var upload =require( './utils/multer.js')
 var cloudinary =require( './utils/cloudinary.js');
 var serverless = require('serverless-http');
 var bodyParser = require('body-parser');
+
 var app = express();
 
 
@@ -54,7 +55,7 @@ router.get('/test', function(req, res){
   
 });
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
 app.use('/.netlify/functions/index', router);
+app.use(cors(corsOptions));
 module.exports = app;
 module.exports.handler = serverless(app);
