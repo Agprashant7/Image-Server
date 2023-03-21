@@ -11,9 +11,9 @@ cloudinaryObject.config({
   api_key: API_KEY,
   api_secret: API_SECRET,
 });
+const cloudinary = cloudinaryObject;
 
-export const cloudinary = cloudinaryObject;
-
+export default cloudinary
 // export const storage = new CloudinaryStorage({
 //   cloudinary,
 //   params: async (request, file) => {

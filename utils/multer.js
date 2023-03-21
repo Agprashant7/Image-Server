@@ -7,5 +7,5 @@ var storage =   multer.diskStorage({
       callback(null, file.originalname);  
     }  
   });  
-
-export const upload = multer({ storage : storage}).single('file');  
+const upload = multer({ storage : storage}).single('file');  
+export default upload
