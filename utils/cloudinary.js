@@ -1,6 +1,6 @@
-import { v2 as cloudinaryObject } from "cloudinary";
-import { CloudinaryStorage } from "multer-storage-cloudinary";
-import dotenv from "dotenv";
+var cloudinaryObject=require( "cloudinary");
+var CloudinaryStorage=require( "multer-storage-cloudinary");
+var dotenv=require( "dotenv");
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ cloudinaryObject.config({
 });
 const cloudinary = cloudinaryObject;
 
-export default cloudinary
+module.exports=cloudinary
 // export const storage = new CloudinaryStorage({
 //   cloudinary,
 //   params: async (request, file) => {

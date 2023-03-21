@@ -1,10 +1,9 @@
 
-import express from 'express'
-import fs from 'fs';
-import cors from 'cors';
-import upload from './utils/multer.js'
-import  cloudinary  from './utils/cloudinary.js';
-
+var express= require('express')
+var fs =require( 'fs');
+var cors = require('cors');
+var upload =require('./utils/multer.js');
+var cloudinary =require( './utils/cloudinary.js');
 var app = express();
 var f=fs.promises
 

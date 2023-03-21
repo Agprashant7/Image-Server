@@ -1,4 +1,4 @@
-import multer from "multer";
+var multer=require("multer");
 var storage =   multer.diskStorage({  
     destination: function (req, file, callback) {  
       callback(null, './uploadFiles');  
@@ -8,4 +8,4 @@ var storage =   multer.diskStorage({
     }  
   });  
 const upload = multer({ storage : storage}).single('file');  
-export default upload
+module.exports= upload
