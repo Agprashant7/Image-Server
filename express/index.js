@@ -2,7 +2,7 @@
 var express= require('express')
 var fs =require( 'fs');
 var cors = require('cors');
-var upload =require( './utils/multer.js')
+var upload =require('./utils/multer.js');
 var cloudinary =require( './utils/cloudinary.js');
 var serverless = require('serverless-http');
 var bodyParser = require('body-parser');
