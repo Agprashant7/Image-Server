@@ -1,4 +1,4 @@
-var multer=require("multer");
+const multer=require("multer");
 var storage =   multer.diskStorage({  
     destination: function (req, file, callback) {  
       callback(null, './uploadFiles');  
