@@ -30,7 +30,8 @@ app.post('/upload-single-file',  function(req, res){
     
     if(err) {  
         console.log("ERR",err)
-        return res.end("Error uploading file.");  
+        res.status(400)
+        res.send("Error uploading file.");  
     }  
     else if(req.body||req.file){
         // var filePath=`uploadFiles/${req.file.originalname}`
